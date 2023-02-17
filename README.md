@@ -2,10 +2,11 @@
 
 ### **Set-up instructions**
 
-All you need to do is login to one of the gpu-enabled lxplus machines : 
+All you need to do is to login on one of the gpu-enabled lxplus machines : 
 ```
 ssh <username>@lxplus-gpu.cern.ch
 ```
+
 Then you can clone the repository :
 ```
 git clone git@github.com:ckoraka/icsc-Intro-to-accel-comp.git
@@ -23,9 +24,8 @@ nvidia-smi
 3. What is the GPUs global memory?
 
 ## **Exercise 1:** "Hello world" with CUDA
-During the lecture we saw a "Hello World" CUDA kernel. Lets try and run it ourselves! 
+During the lecture we saw a "Hello World" CUDA kernel. Lets try and run it ourselves! To compile and run the *cuda_hello.cu* CUDA script simply do :
 
-To compile and run the *cuda_hello.cu* CUDA script simply do :
 ```
 nvcc cuda_hello.cu -o cuda_hello
 ./cuda_hello
@@ -38,10 +38,9 @@ nvcc cuda_hello.cu -o cuda_hello
 If you get stuck you can take a look at the *cuda_hello.cu* script in the *solutions* directory.
 
 ## **Exercise 2 :** Matrix multiplication on the GPU
-Goal of this excersise is to perform a 2-dimentional matrix multiplication on the GPU. 
-- Start by taking a look at the file **matrix_multiplication.cu**. 
-
-- We can respresent the 2-D matrix in 1-D as shown in the image below. This will make copying the matrix from the host to the device easier.
+Goal of this excersise is to write a CUDA kernel that performs a 2-dimentional square matrix multiplication on the GPU. 
+- Start by taking a look at the file **matrix_multiplication.cu**.  
+- We can respresent the 2-D matrix in 1-D as shown in the image below. This will make copying the matrix from the host to device and from device to host easier. The size of each matrix is DSIZE*DSIZE.
 ![](linearized_matrix.png)
 
 - Find and properly update all parts of the script denoted with **FIXME**.
@@ -52,9 +51,10 @@ nvcc matrix_multiplication.cu -o matrix_multiplication
 ./matrix_multiplication
 ```
 **Lets try and answer some questions :**
-- Compare the time it takes to perform the matrix multiplication on the CPU and the GPU
+- Compare the time it takes to perform the matrix multiplication on the CPU and the GPU. 
+  - What do you observe?
 - Try changing the size of the matrix by mutiplying *DSIZE* by 2,4, and 8.
-    - What do you observe now? How does the CPU and GPU time scale? 
+  - What do you observe now? How does the CPU and GPU time scale? 
 
 If you get stuck you can take a look at the *matrix_multiplication.cu* script in the *solutions* directory.
 
