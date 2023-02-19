@@ -138,6 +138,14 @@ int main() {
 	// Check if matrix multiplication on GPU was correct
 	check_result(h_C);
 
+	// Free the allocated memory 
+	free(h_A);
+	free(h_B);
+	free(h_C);
+	cudaFree(h_A);
+	cudaFree(h_B);
+	cudaFree(h_C);
+
 	return 0;
 
 }

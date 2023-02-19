@@ -135,6 +135,9 @@ int main() {
 	// Check if matrix multiplication on GPU was correct
 	FIXME
 
+	// Free the allocated memory 
+	FIXME
+	
 	return 0;
 
 }
