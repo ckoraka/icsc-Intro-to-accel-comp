@@ -9,7 +9,7 @@ ssh <username>@lxplus-gpu.cern.ch
 
 Then you can clone the repository :
 ```
-git clone git@github.com:ckoraka/icsc-Intro-to-accel-comp.git
+git clone https://github.com/ckoraka/icsc-Intro-to-accel-comp.git
 cd icsc-Intro-to-accel-comp
 ```
 
@@ -38,21 +38,21 @@ nvcc cuda_hello.cu -o cuda_hello
 If you get stuck you can take a look at the *cuda_hello.cu* script in the *solutions* directory.
 
 ## **Exercise 2 :** Matrix multiplication on the GPU
-Goal of this excersise is to write a CUDA kernel that performs a 2-dimentional square matrix multiplication on the GPU. 
+Goal of this excersise is to write a CUDA kernel that performs a 2-dimensional square matrix multiplication on the GPU. 
 - Start by taking a look at the file **matrix_multiplication.cu**.  
 - We can respresent the 2-D matrix in 1-D as shown in the image below. This will make copying the matrix from the host to device and from device to host easier. The size of each matrix is DSIZE*DSIZE.
 ![](linearized_matrix.png)
 
 - Find and properly update all parts of the script denoted with **FIXME**.
 
-To compile and the CUDA script you can do :
+To compile and run the CUDA script you can do :
 ```
 nvcc matrix_multiplication.cu -o matrix_multiplication
 ./matrix_multiplication
 ```
 **Lets try and answer some questions :**
 - Compare the time it takes to perform the matrix multiplication on the CPU and the GPU. 
-  - What do you observe?
+  - What do you observe? (Keep in mind that you are running on shared resources. You can try invoking the program a few times and then select the best run.)
 - Try changing the size of the matrix by mutiplying *DSIZE* by 2,4, and 8.
   - What do you observe now? How does the CPU and GPU time scale? 
 
