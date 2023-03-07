@@ -2,9 +2,10 @@
 
 ### **Set-up instructions**
 
-All you need to do is to login on one of the gpu-enabled lxplus machines : 
+All you need to do is to login on one of the gpu-enabled lxplus9 machines :
+lxplus901 / lxplus902 / lxplus903 / lxplus904 / lxplus905
 ```
-ssh <username>@lxplus-gpu.cern.ch
+ssh <username>@<systemname>.cern.ch
 ```
 
 Then you can clone the repository :
